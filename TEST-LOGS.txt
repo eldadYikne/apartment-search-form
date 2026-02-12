@@ -1,0 +1,86 @@
+=====================================================
+  APARTMENT SEARCH FORM - TEST LOGS
+  Date: 2026-02-12
+  Framework: Jest + React Testing Library
+=====================================================
+
+RESULT: PASS
+FILE:   src/components/ApartmentSearchForm/ApartmentSearchForm.test.tsx
+
+-----------------------------------------------------
+  TEST SUITE: ApartmentSearchForm
+-----------------------------------------------------
+
+ #  | STATUS | TEST NAME                                          | TIME
+----|--------|----------------------------------------------------|--------
+ 1  |  PASS  | renders the form                                   | 96 ms
+ 2  |  PASS  | renders the title                                  | 22 ms
+ 3  |  PASS  | renders the location input with placeholder        | 12 ms
+ 4  |  PASS  | allows typing in the location input                | 21 ms
+ 5  |  PASS  | renders square meter chip options                  | 13 ms
+ 6  |  PASS  | toggles square meter chip on click                 | 17 ms
+ 7  |  PASS  | renders room chip options                          | 12 ms
+ 8  |  PASS  | toggles room chip on click                         | 12 ms
+ 9  |  PASS  | only allows one room chip active at a time         | 12 ms
+10  |  PASS  | renders the budget slider                          | 11 ms
+11  |  PASS  | updates budget display when slider changes         | 13 ms
+12  |  PASS  | renders the purpose select with default value      | 8 ms
+13  |  PASS  | allows changing the purpose                        | 9 ms
+14  |  PASS  | renders the preferences textarea                   | 7 ms
+15  |  PASS  | allows typing in preferences                       | 9 ms
+16  |  PASS  | renders the dealbreakers textarea                  | 7 ms
+17  |  PASS  | renders email and phone inputs                     | 7 ms
+18  |  PASS  | allows typing in contact fields                    | 13 ms
+19  |  PASS  | renders the submit button                          | 7 ms
+20  |  PASS  | renders the WhatsApp CTA button                    | 7 ms
+21  |  PASS  | submits the form without errors                    | 7 ms
+22  |  PASS  | shows error when typing numbers in location input  | 11 ms
+23  |  PASS  | allows Hebrew letters in location input            | 8 ms
+24  |  PASS  | shows error when typing numbers in preferences     | 10 ms
+25  |  PASS  | shows error when typing numbers in dealbreakers    | 10 ms
+26  |  PASS  | shows error when typing letters in phone input     | 9 ms
+27  |  PASS  | allows numbers in phone input                      | 8 ms
+28  |  PASS  | shows error for invalid email                      | 9 ms
+29  |  PASS  | clears email error for valid email                 | 11 ms
+30  |  PASS  | shows red border on invalid inputs                 | 20 ms
+
+-----------------------------------------------------
+  SUMMARY
+-----------------------------------------------------
+
+Test Suites:  1 passed,  1 total
+Tests:       30 passed, 30 total
+Snapshots:    0 total
+Time:         5.345 s
+
+-----------------------------------------------------
+  TEST CATEGORIES BREAKDOWN
+-----------------------------------------------------
+
+RENDERING TESTS (11 tests):
+  - Form, title, location input, sqm chips, room chips,
+    budget slider, purpose select, preferences textarea,
+    dealbreakers textarea, email/phone inputs, submit button,
+    WhatsApp button
+
+INTERACTION TESTS (10 tests):
+  - Typing in location, toggling sqm chips, toggling room
+    chips, single room selection, slider change, purpose
+    change, typing in preferences, typing in contacts,
+    form submission
+
+VALIDATION TESTS (9 tests):
+  - Location: blocks numbers, allows Hebrew letters
+  - Preferences: blocks numbers
+  - Dealbreakers: blocks numbers
+  - Phone: blocks letters, allows numbers
+  - Email: shows error for invalid format, clears on valid
+  - Red border on invalid inputs
+
+-----------------------------------------------------
+  ERRORS / FAILURES
+-----------------------------------------------------
+
+None. All 30 tests passed successfully.
+
+=====================================================

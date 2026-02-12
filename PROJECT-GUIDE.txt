@@ -1,0 +1,210 @@
+=====================================================
+  APARTMENT SEARCH FORM - PROJECT GUIDE
+  For Students & Junior Developers
+=====================================================
+
+
+WHAT IS THIS PROJECT?
+---------------------
+This is a React component built from a Figma design.
+It's a Hebrew (RTL) apartment search form that lets
+users fill in their preferences to find an apartment.
+
+The form includes: text inputs, chip selectors,
+a range slider, a dropdown, textareas, and buttons.
+
+
+PROJECT STRUCTURE
+-----------------
+
+apartment-search-form/
+|
+|-- public/
+|   |-- index.html            <-- The HTML shell that loads the React app
+|
+|-- src/
+|   |-- index.tsx              <-- Entry point - renders <App /> into the DOM
+|   |-- App.tsx                <-- Root component - loads ApartmentSearchForm
+|   |-- react-app-env.d.ts    <-- TypeScript types for Create React App
+|   |
+|   |-- components/
+|       |-- ApartmentSearchForm/
+|           |-- ApartmentSearchForm.tsx    <-- THE MAIN COMPONENT (all the logic)
+|           |-- ApartmentSearchForm.css    <-- ALL THE STYLES
+|           |-- ApartmentSearchForm.test.tsx  <-- UNIT TESTS (21 tests)
+|           |-- index.ts                   <-- Barrel export for clean imports
+|
+|-- package.json       <-- Project dependencies and scripts
+|-- tsconfig.json      <-- TypeScript configuration
+
+
+KEY CONCEPTS USED IN THIS PROJECT
+----------------------------------
+
+1. REACT WITH TYPESCRIPT (TSX)
+   - We use .tsx files instead of .jsx
+   - TypeScript adds type safety (catches bugs before runtime)
+   - Example: the "ApartmentSearchFormData" interface defines
+     the exact shape of our form data
+
+2. useState HOOK
+   - Manages all form field values in a single state object
+   - When a user types or clicks, we update the state
+   - React then re-renders the component with the new values
+
+3. CONTROLLED COMPONENTS
+   - Every input has a "value" tied to state and an "onChange" handler
+   - This means React controls the form data (not the browser)
+   - Example: <input value={formData.location} onChange={...} />
+
+4. BEM CSS NAMING (Block-Element-Modifier)
+   - Block:    .apartment-form
+   - Element:  .apartment-form__input
+   - Modifier: .apartment-form__chip--active
+   - This keeps CSS organized and avoids naming conflicts
+
+5. RTL (RIGHT-TO-LEFT) LAYOUT
+   - Hebrew reads right-to-left, so the form uses dir="rtl"
+   - CSS flexbox handles the layout direction automatically
+   - text-align: right is used on inputs
+
+6. COMPONENT COMPOSITION
+   - WhatsAppIcon is a small sub-component inside the same file
+   - The main component is exported as default
+   - index.ts re-exports it for cleaner imports:
+     import ApartmentSearchForm from './components/ApartmentSearchForm'
+     (instead of importing the full file path)
+
+7. DATA-TESTID ATTRIBUTES
+   - Every interactive element has a data-testid="..."
+   - These are used by the test file to find elements
+   - They don't affect the UI - they're only for testing
+
+
+HOW THE FORM WORKS
+------------------
+
+[User opens the page]
+        |
+        v
+[React renders the form with default state]
+        |
+        v
+[User interacts: types, clicks chips, moves slider]
+        |
+        v
+[onChange/onClick handlers call handleChange()]
+        |
+        v
+[State updates via setFormData()]
+        |
+        v
+[React re-renders with new values]
+        |
+        v
+[User clicks "Submit" button]
+        |
+        v
+[handleSubmit() fires, prevents page reload]
+(In a real app, this would send data to an API)
+
+
+UNDERSTANDING THE UNIT TESTS
+-----------------------------
+
+The test file uses 3 libraries:
+- @testing-library/react   --> render(), screen, fireEvent
+- @testing-library/jest-dom --> .toBeInTheDocument(), .toHaveClass()
+- Jest (built-in)          --> describe(), it(), expect()
+
+What the tests check:
+- Does the form render?
+- Are all inputs, chips, buttons visible?
+- Can the user type in text fields?
+- Do chip buttons toggle on/off correctly?
+- Does only one chip stay active at a time?
+- Does the budget slider update the displayed value?
+- Does the dropdown work?
+- Can the form be submitted without crashing?
+
+How to read a test:
+
+  it('allows typing in the location input', () => {
+    const input = screen.getByTestId('location-input');  // Find the element
+    fireEvent.change(input, { target: { value: 'Tel Aviv' } });  // Simulate typing
+    expect(input.value).toBe('Tel Aviv');  // Check the result
+  });
+
+
+HOW TO RUN THIS PROJECT
+------------------------
+
+1. Open a terminal in the project folder
+
+2. Install dependencies (first time only):
+   npm install
+
+3. Start the development server:
+   npm start
+   --> Opens at http://localhost:3000
+
+4. Run the tests:
+   npm test
+
+5. Build for production:
+   npm run build
+
+
+TECHNOLOGIES USED
+-----------------
+
+| Technology          | Version  | Purpose                        |
+|---------------------|----------|--------------------------------|
+| React               | 18.x     | UI library                     |
+| TypeScript          | 4.9      | Type-safe JavaScript           |
+| Create React App    | 5.x      | Project setup & build tooling  |
+| Jest                | 29.x     | Test runner                    |
+| Testing Library     | 14.x     | Testing utilities for React    |
+| CSS (vanilla)       | --       | Styling with BEM methodology   |
+
+
+WORKFLOW: FIGMA TO CODE
+------------------------
+
+This project was built following this workflow:
+
+1. DESIGN   --> Designer creates the UI in Figma
+2. INSPECT  --> Developer examines colors, spacing, fonts, layout
+3. BUILD    --> Developer creates React component matching the design
+4. STYLE    --> Developer writes CSS to match visual appearance
+5. TEST     --> Developer writes unit tests for all functionality
+6. REVIEW   --> Team reviews the component against the Figma design
+
+
+TIPS FOR JUNIOR DEVELOPERS
+----------------------------
+
+- Always read the Figma design carefully before coding
+- Start with the HTML structure, then add styles, then add logic
+- Use meaningful names for CSS classes (BEM helps!)
+- Write tests as you build, not after
+- Keep components focused - one component = one responsibility
+- Use TypeScript interfaces to define your data shapes early
+- console.log() is your friend for debugging state changes
+- Check the browser DevTools for layout issues (F12)
+
+
+COMMON COMMANDS CHEAT SHEET
+-----------------------------
+
+npm install          --> Install all dependencies
+npm start            --> Run dev server (hot reload)
+npm test             --> Run all tests in watch mode
+npm run build        --> Create production build
+npm test -- --verbose --> Run tests with detailed output
+npm test -- --coverage --> Run tests with coverage report
+
+
+=====================================================
+  Happy Coding! :)
+=====================================================

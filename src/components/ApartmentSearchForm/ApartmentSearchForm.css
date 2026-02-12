@@ -1,0 +1,300 @@
+/* ===== Wrapper ===== */
+.apartment-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f0f4f8;
+  padding: 24px 16px;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* ===== Form Card ===== */
+.apartment-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 28px 28px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 2px solid #3eaafc;
+}
+
+/* ===== Title ===== */
+.apartment-form__title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a8ceb;
+  line-height: 1.35;
+  margin: 0 0 28px;
+}
+
+/* ===== Section ===== */
+.apartment-form__section {
+  margin-bottom: 20px;
+}
+
+/* ===== Labels ===== */
+.apartment-form__label {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5cb8f7;
+  margin-bottom: 8px;
+}
+
+/* ===== Text Input ===== */
+.apartment-form__input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #b8dffb;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  text-align: right;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.apartment-form__input::placeholder {
+  color: #a8c8e8;
+}
+
+.apartment-form__input:focus {
+  border-color: #3eaafc;
+}
+
+.apartment-form__input--half {
+  width: 48%;
+}
+
+/* ===== Chip Buttons ===== */
+.apartment-form__chips {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.apartment-form__chip {
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 2px solid #b8dffb;
+  background: #fff;
+  color: #6ec1fa;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apartment-form__chip:hover {
+  border-color: #3eaafc;
+  color: #3eaafc;
+}
+
+.apartment-form__chip--active {
+  background: #3eaafc;
+  border-color: #3eaafc;
+  color: #fff;
+}
+
+/* ===== Budget / Range ===== */
+.apartment-form__budget {
+  text-align: center;
+}
+
+.apartment-form__budget-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.apartment-form__range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to left, #3eaafc, #b8dffb);
+  outline: none;
+}
+
+.apartment-form__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #3eaafc;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.apartment-form__range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #3eaafc;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Select ===== */
+.apartment-form__select-wrapper {
+  position: relative;
+}
+
+.apartment-form__select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #b8dffb;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  direction: rtl;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.apartment-form__select:focus {
+  border-color: #3eaafc;
+}
+
+.apartment-form__select-wrapper::after {
+  content: '\25BC';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #3eaafc;
+  pointer-events: none;
+}
+
+/* ===== Textarea ===== */
+.apartment-form__textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 16px;
+  border: 2px solid #b8dffb;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  outline: none;
+  text-align: right;
+  resize: vertical;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.apartment-form__textarea::placeholder {
+  color: #a8c8e8;
+}
+
+.apartment-form__textarea:focus {
+  border-color: #3eaafc;
+}
+
+/* ===== Contact Row ===== */
+.apartment-form__contact-row {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* ===== Submit Button ===== */
+.apartment-form__submit {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #47b8fd, #1a8ceb);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.apartment-form__submit:hover {
+  opacity: 0.9;
+}
+
+/* ===== Validation Errors ===== */
+.apartment-form__error {
+  display: block;
+  color: #e53935;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.apartment-form__input--error {
+  border-color: #e53935;
+}
+
+.apartment-form__textarea--error {
+  border-color: #e53935;
+}
+
+.apartment-form__input-group {
+  width: 48%;
+}
+
+.apartment-form__input-group .apartment-form__input--half {
+  width: 100%;
+}
+
+/* ===== WhatsApp CTA ===== */
+.apartment-form__whatsapp-cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.apartment-form__whatsapp-text {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.apartment-form__whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #25d366;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.apartment-form__whatsapp-btn:hover {
+  opacity: 0.9;
+}
+
+.apartment-form__whatsapp-icon {
+  flex-shrink: 0;
+}
